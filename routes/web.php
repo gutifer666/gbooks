@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/books/add', 'BooksController@add');
-Route::get('/books/list', 'BooksController@list');
-Route::post('/books/add', 'BooksController@addToDB');
+Route::resource('books', 'BookController');

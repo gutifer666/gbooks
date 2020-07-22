@@ -12,8 +12,8 @@
         <a class="navbar-brand" href="/">gBooks</a>
 
         <div class="collapse navbar-collapse">
-            <a class="btn btn-danger my-2 my-sm-0" href="/books/add">Añadir</a>
-            <a class="btn btn-secondary my-2 my-sm-0" href="/books/list">Catálogo</a>
+            <a class="btn btn-danger my-2 my-sm-0" href="/books/create">Añadir</a>
+            <a class="btn btn-secondary my-2 my-sm-0" href="/books">Catálogo</a>
         </div>>
     </nav>
     <div id="app" class="container">
@@ -30,15 +30,15 @@
             </div>
             @endif
 
-            <form method="post" action="/books/add">
+            <form method="post" action="/books">
                 @csrf
                 <div class="row">
                     <div class="col-md-6 mb-3">
-                        <input type="text" class="form-control" name="titulo" placeholder="Título">
+                        <input type="text" class="form-control" name="title" placeholder="Título">
                     </div>
 
                     <div class="col-md-6 mb-3">
-                        <input type="text" name="autor" class="form-control" placeholder="Autor">
+                        <input type="text" name="author" class="form-control" placeholder="Autor">
                     </div>
                 </div>
                 <button class="btn btn-primary btn-lg btn-block" type="submit">Añadir</button>

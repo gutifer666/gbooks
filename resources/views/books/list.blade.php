@@ -12,8 +12,8 @@
         <a class="navbar-brand" href="/">gBooks</a>
 
         <div class="collapse navbar-collapse">
-            <a class="btn btn-danger my-2 my-sm-0" href="/books/add">Añadir</a>
-            <a class="btn btn-secondary my-2 my-sm-0" href="/books/list">Catálogo</a>
+            <a class="btn btn-danger my-2 my-sm-0" href="/books/create">Añadir</a>
+            <a class="btn btn-secondary my-2 my-sm-0" href="/books">Catálogo</a>
         </div>
     </nav>
     <div id="app" class="container">
@@ -27,10 +27,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($libros as $libro)
+                    @foreach ($books as $book)
                     <tr>
-                        <td>{{ $libro->titulo }}</td>
-                        <td>{{ $libro->autor }}</td>
+                        <td>{{ $book->title }}</td>
+                        <td>{{ $book->author }}</td>
                     </tr>
                     @endforeach
                 </tbody>
