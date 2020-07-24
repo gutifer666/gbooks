@@ -32,15 +32,27 @@
 
             <form method="post" action="/books">
                 @csrf
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <input type="text" class="form-control" name="title" placeholder="Título">
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <input type="text" name="author" class="form-control" placeholder="Autor">
-                    </div>
+                
+                <div class="form-group">
+                    <input type="text" class="form-control" name="title" placeholder="Título">
                 </div>
+
+                <div class="form-group">
+                    <input type="text"  class="form-control" name="author" placeholder="Autor">
+                </div>
+
+                <div class="form-group">
+                    <input type="year"  class="form-control" name="year" placeholder="Año de edición">
+                </div>
+
+                <div class="form-group">
+                    <input type="text"  class="form-control" name="argument" placeholder="Argumento">
+                </div>
+
+                <div class="form-group">
+                    <input type="text"  class="form-control" name="isbn" placeholder="ISBN">
+                </div>
+                
                 <button class="btn btn-primary btn-lg btn-block" type="submit">Añadir</button>
             </form>
         </section>

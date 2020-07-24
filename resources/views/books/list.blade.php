@@ -24,6 +24,10 @@
                     <tr>
                         <th>Título</th>
                         <th>Autor</th>
+                        <th>Año</th>
+                        <th>Argumento</th>
+                        <th>ISBN</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -31,6 +35,9 @@
                     <tr>
                         <td>{{ $book->title }}</td>
                         <td>{{ $book->author }}</td>
+                        <td>{{ $book->year }}</td>
+                        <td>{{ $book->argument }}</td>
+                        <td>{{ $book->isbn }}</td>
                     </tr>
                     @endforeach
                 </tbody>

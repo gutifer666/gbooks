@@ -58,9 +58,12 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
-            $all_book_atributtes = $book->all();             
-            dd($all_book_atributtes); 
-            /* return view('show.book')->with(['book'=> $all_book_atributtes]); */
+             
+            dd($book->title); 
+            /* return view('show.book')->with(
+                ['title'=> $book->title,
+                 'author'=> $book->author
+                ]); */
     }
 
     /**
@@ -71,7 +74,7 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        //
+        return 'Show the form for editing the specified resource';
     }
 
     /**
@@ -83,7 +86,7 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
-        //
+        return 'Update the specified resource in storage';
     }
 
     /**
@@ -94,6 +97,6 @@ class BookController extends Controller
      */
     public function destroy(Book $book)
     {
-        //
+        return 'Remove the specified resource from storage';
     }
 }
