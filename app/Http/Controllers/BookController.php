@@ -58,7 +58,9 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
-        //
+            $all_book_atributtes = $book->all();             
+            dd($all_book_atributtes); 
+            /* return view('show.book')->with(['book'=> $all_book_atributtes]); */
     }
 
     /**
