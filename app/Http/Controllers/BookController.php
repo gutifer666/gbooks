@@ -57,13 +57,8 @@ class BookController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Book $book)
-    {
-             
-            dd($book->title); 
-            /* return view('show.book')->with(
-                ['title'=> $book->title,
-                 'author'=> $book->author
-                ]); */
+    { 
+            return view('books.show-book')->with(['book'=> $book]);
     }
 
     /**
@@ -74,7 +69,7 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        return 'Show the form for editing the specified resource';
+        return view('books.form-edit-book')->with(['book' => $book]);
     }
 
     /**
@@ -86,7 +81,8 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
-        return 'Update the specified resource in storage';
+        $book->update($request->all());
+        return redirect('/');
     }
 
     /**
@@ -97,6 +93,7 @@ class BookController extends Controller
      */
     public function destroy(Book $book)
     {
-        return 'Remove the specified resource from storage';
+        $book->delete();
+        return redirect('/');
     }
 }

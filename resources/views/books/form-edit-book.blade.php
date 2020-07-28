@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Form</title>
+    <title>Form Edit Book</title>
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
@@ -18,7 +18,7 @@
     </nav>
     <div id="app" class="container">
         <section class="text-center m-4">
-            <h1>Añadir libro</h1>
+            <h1>Editar libro</h1>
 
             @if ($errors->any())
             <div class="alert alert-danger">
@@ -30,30 +30,32 @@
             </div>
             @endif
 
-            <form method="post" action="/books">
+        <form  method="post" action="/books/{{$book->id}}">
+                @method('PUT')
                 @csrf
                 
                 <div class="form-group">
-                    <input type="text" class="form-control" name="title" placeholder="Título">
+                <input type="text" class="form-control" name="title" value="{{$book->title}}">
                 </div>
 
                 <div class="form-group">
-                    <input type="text"  class="form-control" name="author" placeholder="Autor">
+                    <input type="text"  class="form-control" name="author" value="{{$book->author}}">
                 </div>
 
                 <div class="form-group">
-                    <input type="year"  class="form-control" name="year" placeholder="Año de edición">
+                    <input type="year"  class="form-control" name="year" value="{{$book->year}}">
                 </div>
 
                 <div class="form-group">
-                    <textarea class="form-control" name="argument" placeholder="Argumento"></textarea>
+                    <input class="form-control" name="argument" value="{{$book->argument}}">
                 </div>
 
                 <div class="form-group">
-                    <input type="text"  class="form-control" name="isbn" placeholder="ISBN">
+                    <input type="text"  class="form-control" name="isbn" value="{{$book->isbn}}">
                 </div>
                 
-                <button class="btn btn-primary btn-lg btn-block" type="submit">Añadir</button>
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Editar</button>
+            <p>{{$book->id}}</p>
             </form>
         </section>
     </div>
