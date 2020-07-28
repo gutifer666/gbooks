@@ -84,6 +84,16 @@ class BookController extends Controller
         $book->update($request->all());
         return redirect('/');
     }
+        /**
+     * Show the form for remove the specified resource.
+     *
+     * @param  \App\Book  $book
+     * @return \Illuminate\Http\Response
+     */
+    public function delete(Book $book)
+    {
+        return view('books.delete-book')->with(['book' => $book]);
+    }
 
     /**
      * Remove the specified resource from storage.
