@@ -19,3 +19,4 @@ Route::get('/', function () {
 });
 Route::resource('books', 'BookController');
 Route::get('books/delete/{book}', 'BookController@delete');
+Route::resource('Authors','AuthorController');
