@@ -14,7 +14,11 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        //
+        $authors = Author::all();
+
+        return view('authors.list', [
+            'authors' => $authors
+        ]);
     }
 
     /**
@@ -24,7 +28,7 @@ class AuthorController extends Controller
      */
     public function create()
     {
-        //
+        return view('authors.form');
     }
 
     /**
@@ -35,7 +39,8 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Author::create($request->all());
+        return redirect('/');
     }
 
     /**
@@ -46,7 +51,7 @@ class AuthorController extends Controller
      */
     public function show(Author $author)
     {
-        //
+        return view('authors.show-author')->with(['author'=> $author]);
     }
 
     /**
@@ -57,7 +62,7 @@ class AuthorController extends Controller
      */
     public function edit(Author $author)
     {
-        //
+        return view('authors.form-edit-author')->with(['author' => $author]);
     }
 
     /**
@@ -69,7 +74,19 @@ class AuthorController extends Controller
      */
     public function update(Request $request, Author $author)
     {
-        //
+        $author->update($request->all());
+        return redirect('/');
+    }
+
+    /**
+     * Show the form for remove the specified resource.
+     *
+     * @param  \App\Author  $author
+     * @return \Illuminate\Http\Response
+     */
+    public function delete(Author $author)
+    {
+        return view('authors.delete-author')->with(['author' => $author]);
     }
 
     /**
@@ -80,6 +97,7 @@ class AuthorController extends Controller
      */
     public function destroy(Author $author)
     {
-        //
+        $author->delete();
+        return redirect('/');
     }
 }
