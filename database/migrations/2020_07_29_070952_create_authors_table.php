@@ -17,7 +17,7 @@ class CreateAuthorsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('nationality');
-            $table->year('year-of-birth');
+            $table->year('year');
             $table->longText('books');
             $table->timestamps();
         });
