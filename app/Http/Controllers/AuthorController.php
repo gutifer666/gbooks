@@ -16,7 +16,7 @@ class AuthorController extends Controller
     {
         $authors = Author::all();
 
-        return view('authors.list', [
+        return view('authors.list')->with([
             'authors' => $authors
         ]);
     }

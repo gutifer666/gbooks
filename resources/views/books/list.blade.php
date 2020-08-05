@@ -18,7 +18,7 @@
                 @foreach ($books as $book)
                 <tr>
                     <td>{{ $book->title }}</td>
-                    <td>{{ $book->author }}</td>
+                    <td>{{ $book->author->name }}</td>
                     <td>{{ $book->year }}</td>
                     <td>{{ $book->argument }}</td>
                     <td>{{ $book->isbn }}</td>

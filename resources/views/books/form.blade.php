@@ -18,7 +18,7 @@
             @csrf
             
             <div class="form-group">
-                <input type="text" class="form-control" name="title" placeholder="Título">
+            <input type="text" class="form-control" name="title" placeholder="Título" value="{{ old('title') }}">
             </div>
 
             <div class="form-group">

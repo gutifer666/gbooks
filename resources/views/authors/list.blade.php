@@ -3,6 +3,7 @@
 <div id="app" class="container">
     <section class="text-center m-4">
         <h1>Lista de autores</h1>
+        
         <table class="table" cellspacing="0">
             <thead>
                 <tr>
@@ -18,7 +19,7 @@
                     <td>{{ $author->name }}</td>
                     <td>{{ $author->nationality }}</td>
                     <td>{{ $author->year }}</td>
-                    <td>{{ $author->books }}</td>
+                    <td>{{ $author->books->pluck('title') }}</td>
                 </tr>
                 @endforeach
             </tbody>
