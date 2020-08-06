@@ -18,8 +18,9 @@
                 <tr>
                     <td>{{ $author->name }}</td>
                     <td>{{ $author->nationality }}</td>
-                    <td>{{ $author->year }}</td>
+                    <td>{{ $author->year }}</td>                    
                     <td>{{ $author->books->pluck('title') }}</td>
+
                 </tr>
                 @endforeach
             </tbody>

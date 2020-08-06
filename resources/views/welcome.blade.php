@@ -30,6 +30,16 @@
             <a href="https://vapor.laravel.com">Vapor</a>
             <a href="https://github.com/laravel/laravel">GitHub</a>
         </div>
+
+        <div>
+            @auth
+                Hello, {{ Auth::user()->name }}
+            @endauth
+            @guest
+                Please, register.
+            @endguest
+        </div>
+
     </div>
 </div>
 @endsection

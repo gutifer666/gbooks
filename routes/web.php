@@ -1,6 +1,8 @@
 <?php
 
+use GuzzleHttp\Middleware;
 use Illuminate\Routing\Route as RoutingRoute;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,8 +19,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('books', 'BookController');
-Route::get('books/delete/{book}', 'BookController@delete');
+Route::resource('books', 'BookController')->middleware('auth');
+Route::get('books/delete/{book}', 'BookController@delete')->middleware('auth');
 
-Route::resource('authors','AuthorController');
-Route::get('authors/delete/{author}', 'AuthorController@delete');
+Route::resource('authors','AuthorController')->middleware('auth');
+Route::get('authors/delete/{author}', 'AuthorController@delete')->middleware('auth');
+
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
