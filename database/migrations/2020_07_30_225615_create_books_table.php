@@ -22,7 +22,7 @@ class CreateBooksTable extends Migration
             $table->uuid('isbn');
             $table->timestamps();
 
-            /* $table->foreignId('author_id')->references('id')->on('authors'); */
+            $table->foreign('author_id')->references('id')->on('authors')->onDelete('cascade');
         });
     }
 

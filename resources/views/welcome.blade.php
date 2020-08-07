@@ -39,6 +39,7 @@
                 Please, register.
             @endguest
         </div>
+        
 
     </div>
 </div>

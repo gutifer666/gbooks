@@ -22,7 +22,16 @@
             </div>
 
             <div class="form-group">
-                <input type="text"  class="form-control" name="author" placeholder="Autor">
+              <label for="author">Selecciona un autor</label>
+              <select class="form-control" name="author_id" id="author">
+
+                @foreach ($authors as $author)
+                    
+                    <option value="{{ $author->id}}">{{ $author->name }}</option>
+                    
+                @endforeach
+
+              </select>
             </div>
 
             <div class="form-group">

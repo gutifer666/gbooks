@@ -29,9 +29,9 @@
                 <input type="year"  class="form-control" name="year" placeholder="Año de nacimiento">
             </div>
 
-            <div class="form-group">
+{{--             <div class="form-group">
                 <textarea class="form-control" name="books" placeholder="Libros"></textarea>
-            </div>
+            </div> --}}
            
             <button class="btn btn-primary btn-lg btn-block" type="submit">Añadir</button>
         </form>

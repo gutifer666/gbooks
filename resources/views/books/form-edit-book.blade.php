@@ -22,8 +22,15 @@
             <input type="text" class="form-control" name="title" value="{{$book->title}}">
             </div>
 
-            <div class="form-group">
-                <input type="text"  class="form-control" name="author" value="{{$book->author}}">
+            <div>
+                <label for="author">Selecciona un autor</label>
+                <select class="form-control" name="author_id" id="author">
+                    @foreach ($authors as $author)
+                        
+                        <option value="{{ $author->id}}">{{ $author->name }}</option>
+            
+                    @endforeach
+                </select>
             </div>
 
             <div class="form-group">
@@ -39,7 +46,7 @@
             </div>
             
             <button class="btn btn-primary btn-lg btn-block" type="submit">Editar</button>
-        <p>{{$book->id}}</p>
+
         </form>
     </section>
 </div>
